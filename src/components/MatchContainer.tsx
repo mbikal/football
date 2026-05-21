@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import TeamInfo from "./TeamInfo";
 import styles from "./MatchContainer.module.css";
 
@@ -5,9 +6,14 @@ const ADSTERRA_LINK =
   "https://www.effectivecpmnetwork.com/vx44kz8er?key=9ad95668ee33cb1db5f98a781b111c37";
 
 function MatchContainer() {
+  const navigate = useNavigate();
+
   function handleClick(): void {
-    // opens Adsterra link in new tab (recommended)
+    // 1. Open Adsterra (monetization)
     window.open(ADSTERRA_LINK, "_blank", "noopener,noreferrer");
+
+    // 2. Redirect to video page
+    navigate("/video");
   }
 
   return (
@@ -23,7 +29,6 @@ function MatchContainer() {
   );
 }
 
-// ✅ properly typed function
 function formatLocalTime(dateString: string): string {
   return new Date(dateString).toLocaleTimeString(undefined, {
     hour: "2-digit",
