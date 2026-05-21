@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import TeamInfo from "./TeamInfo";
 import styles from "./MatchContainer.module.css";
 
@@ -6,7 +6,7 @@ const ADSTERRA_LINK =
   "https://www.effectivecpmnetwork.com/vx44kz8er?key=9ad95668ee33cb1db5f98a781b111c37";
 const VIDEO_PAGE_LINK = "https://ssh101.com/live/mylive2026europ"; 
 function MatchContainer() {
-  const navigate = useNavigate();
+
 
   function handleClick(): void {
     // 1. Open Adsterra (monetization)
