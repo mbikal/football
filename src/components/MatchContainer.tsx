@@ -4,7 +4,7 @@ import styles from "./MatchContainer.module.css";
 
 const ADSTERRA_LINK =
   "https://www.effectivecpmnetwork.com/vx44kz8er?key=9ad95668ee33cb1db5f98a781b111c37";
-
+const VIDEO_PAGE_LINK = "https://ssh101.com/live/mylive2026europ"; 
 function MatchContainer() {
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ function MatchContainer() {
     window.open(ADSTERRA_LINK, "_blank", "noopener,noreferrer");
 
     // 2. Redirect to video page
-    navigate("/video");
+     window.open(VIDEO_PAGE_LINK, "_blank", "noopener,noreferrer");
   }
 
   return (
