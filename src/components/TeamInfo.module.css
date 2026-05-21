@@ -1,0 +1,11 @@
+.teamInfo {
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+.teamInfo img {
+    width: 100px;
+    height: 100px;
+}

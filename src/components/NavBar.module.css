@@ -1,0 +1,20 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navBar{
+    list-style: none;
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+}
+
+.navBar li a{
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: white
+}

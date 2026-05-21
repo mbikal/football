@@ -1,0 +1,84 @@
+.aboutPage {
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: #222;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #0f172a, #1e3a8a);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.content {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.features {
+  padding: 60px 20px;
+  background: white;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: #f1f5f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: #0f172a;
+  color: white;
+  margin-top: 50px;
+}

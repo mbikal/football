@@ -1,0 +1,16 @@
+.box{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: dimgray;
+    border-radius: 20px;
+    align-items: center;
+}
+.matchTime{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}

@@ -1,0 +1,14 @@
+.NewsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+}
+.NewsContainer .img{
+    margin-top: 10px;
+    width: 400px;
+    height: 400px;
+}
