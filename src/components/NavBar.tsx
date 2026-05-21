@@ -9,9 +9,6 @@ function NavBar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/news">News</NavLink>
-          </li>
-          <li>
             <NavLink to="/about">About Us</NavLink>
           </li>
         </ul>
