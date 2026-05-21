@@ -8,15 +8,12 @@ const ADSTERRA_LINK =
 const VIDEO_PAGE_LINK = "https://ssh101.com/live/mylive2026europ"; 
 function MatchContainer() {
 
-const [clicked, setClicked] =useState(false);
+const [clicked, setClicked] =useState(0);
   function handleClick(): void {
-    if (clicked){
-      setClicked(true);
+    if (clicked === 0){
+      setClicked(1);
       window.open(ADSTERRA_LINK, "_blank", "noopener,noreferrer");
     } // Prevent multiple clicks
-    // 1. Open Adsterra (monetization)
-    
-
     // 2. Redirect to video page
      window.open(VIDEO_PAGE_LINK, "_blank", "noopener,noreferrer");
   }
