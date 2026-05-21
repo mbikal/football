@@ -1,7 +1,7 @@
 
 import TeamInfo from "./TeamInfo";
 import styles from "./MatchContainer.module.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ADSTERRA_LINK =
   "https://www.effectivecpmnetwork.com/vx44kz8er?key=9ad95668ee33cb1db5f98a781b111c37";
