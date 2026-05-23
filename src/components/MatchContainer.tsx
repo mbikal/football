@@ -2,11 +2,15 @@
 import TeamInfo from "./TeamInfo";
 import styles from "./MatchContainer.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const ADSTERRA_LINK =
   "https://www.effectivecpmnetwork.com/vx44kz8er?key=9ad95668ee33cb1db5f98a781b111c37";
-const VIDEO_PAGE_LINK = "https://ssh101.com/live/mylive2026europ"; 
+
+
+
 function MatchContainer() {
+  const navigate = useNavigate();
 
 const [clicked, setClicked] =useState(0);
   function handleClick(): void {
@@ -15,7 +19,7 @@ const [clicked, setClicked] =useState(0);
       window.open(ADSTERRA_LINK, "_blank", "noopener,noreferrer");
     } // Prevent multiple clicks
     // 2. Redirect to video page
-     window.open(VIDEO_PAGE_LINK, "_blank", "noopener,noreferrer");
+     navigate("/video");
   }
 
   return (

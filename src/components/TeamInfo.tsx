@@ -1,8 +1,7 @@
-import team1 from "../assets/alnassr.png";
-import team2 from "../assets/damac.png"
+import team1 from "../assets/realmadrid.png";
+import team2 from "../assets/althletic.png";
 import styles from "./TeamInfo.module.css";
-function TeamInfo({ishome}) {
-    
+function TeamInfo({ ishome }) {
   return (
     <div className={styles.teamInfo}>
       {ishome ? (
