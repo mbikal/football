@@ -1,21 +1,24 @@
-import team1 from "../assets/realmadrid.png";
-import team2 from "../assets/althletic.png";
 import styles from "./TeamInfo.module.css";
-function TeamInfo({ ishome }) {
+
+type TeamProps = {
+  teamImg: string;
+  teamName: string;
+};
+
+export function HomeTeam({ teamImg, teamName }: TeamProps) {
   return (
     <div className={styles.teamInfo}>
-      {ishome ? (
-        <>
-          <img src={team1} alt="Al nassr" />
-          <h3>Al Nassr</h3>
-        </>
-      ) : (
-        <>
-          <h3>Damac</h3>
-          <img src={team2} alt="Damac" />
-        </>
-      )}
+      <img src={teamImg} alt={teamName} />
+      <h3>{teamName}</h3>
     </div>
   );
 }
-export default TeamInfo;
+
+export function AwayTeam({ teamImg, teamName }: TeamProps) {
+  return (
+    <div className={styles.teamInfo}>
+      <h3>{teamName}</h3>
+      <img src={teamImg} alt={teamName} />
+    </div>
+  );
+}

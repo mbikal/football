@@ -1,20 +1,31 @@
 import { useEffect, useState, type CSSProperties } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+type MatchState = {
+  matchDate: string;
+  iframeUrl: string;
+};
 
 export default function VideoPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const state = location.state as MatchState | null;
+
   const [timeLeft, setTimeLeft] = useState("");
   const [matchStarted, setMatchStarted] = useState(false);
 
-  // Nepal time
-  const matchDate = "2026-05-21T23:45:00+05:45";
-
-  const iframeUrl = "https://securedq.blogspot.com/p/6.html";
-
   useEffect(() => {
+    if (!state) {
+      navigate("/");
+      return;
+    }
+
     let timer: ReturnType<typeof setInterval>;
 
     const updateTimer = () => {
       const now = new Date().getTime();
-      const start = new Date(matchDate).getTime();
+      const start = new Date(state.matchDate).getTime();
       const diff = start - now;
 
       if (diff <= 0) {
@@ -40,7 +51,9 @@ export default function VideoPage() {
     timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [state, navigate]);
+
+  if (!state) return null;
 
   return (
     <div style={styles.container}>
@@ -55,7 +68,7 @@ export default function VideoPage() {
         ) : (
           <iframe
             title="Live Stream"
-            src={iframeUrl}
+            src={state.iframeUrl}
             style={styles.iframe}
             allowFullScreen
           />
@@ -103,7 +116,7 @@ const styles: Record<string, CSSProperties> = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    background: "rgba(0,0,0,0.8)",
+    background: "rgba(0,0,0,0.85)",
     zIndex: 2,
     gap: 10,
     fontSize: 20,
