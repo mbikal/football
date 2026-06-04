@@ -2,7 +2,6 @@ import type { Match } from "../types/match";
 
 const STORAGE_KEY = "football_matches";
 const STORAGE_VERSION_KEY = "football_matches_version";
-const CURRENT_VERSION = "2.0";
 
 export const getMatches = (): Match[] => {
   if (typeof window === "undefined") return [];

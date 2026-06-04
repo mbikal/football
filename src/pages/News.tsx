@@ -90,6 +90,8 @@ function News() {
         setLoading(true);
         setError(null);
 
+        console.log('News: Attempting to fetch news...');
+
         const res = await fetch(
           `https://newsapi.org/v2/everything?q=football&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`,
           {
@@ -102,57 +104,73 @@ function News() {
           }
         );
 
+        console.log('News: API response status:', res.status);
+
         if (!res.ok) {
-          if (res.status === 426) {
-            throw new Error('API requires protocol upgrade - using fallback data');
-          }
+          console.log('News: API request failed, using fallback data');
           throw new Error(`API Error: ${res.status}`);
         }
 
         const data = await res.json();
+        console.log('News: API response data:', data);
 
-        if (!data.articles) {
-          throw new Error("Invalid API response");
+        if (!data.articles || data.articles.length === 0) {
+          console.log('News: No articles in response, using fallback data');
+          throw new Error("No articles found");
         }
 
         setNews(data.articles);
         setFilteredNews(data.articles);
+        console.log('News: Successfully loaded', data.articles.length, 'articles');
       } catch (err: any) {
-        console.error(err);
-        if (err.message.includes('426') || err.message.includes('protocol upgrade')) {
-          // Use fallback data for API Error 426
-          const fallbackNews = [
-            {
-              title: "Latest Football Updates",
-              description: "Stay tuned for the latest football news and updates from around the world.",
-              url: "#",
-              urlToImage: "/logo.png",
-              publishedAt: new Date().toISOString(),
-              source: { name: "kissmyfootball" }
-            },
-            {
-              title: "Match Highlights Available",
-              description: "Check out the latest match highlights and analysis from recent games.",
-              url: "#",
-              urlToImage: "/logo.png",
-              publishedAt: new Date().toISOString(),
-              source: { name: "kissmyfootball" }
-            },
-            {
-              title: "Transfer Window Updates",
-              description: "Get the latest transfer rumors and confirmed deals from the football world.",
-              url: "#",
-              urlToImage: "/logo.png",
-              publishedAt: new Date().toISOString(),
-              source: { name: "kissmyfootball" }
-            }
-          ];
-          setNews(fallbackNews);
-          setFilteredNews(fallbackNews);
-          setError(null);
-        } else {
-          setError(err.message || "Something went wrong");
-        }
+        console.error('News: Error fetching news:', err);
+        // Always use fallback data for any error
+        console.log('News: Using fallback data');
+        const fallbackNews = [
+          {
+            title: "Latest Football Updates",
+            description: "Stay tuned for the latest football news and updates from around the world.",
+            url: "#",
+            urlToImage: "/logo.png",
+            publishedAt: new Date().toISOString(),
+            source: { name: "kissmyfootball" }
+          },
+          {
+            title: "Match Highlights Available",
+            description: "Check out the latest match highlights and analysis from recent games.",
+            url: "#",
+            urlToImage: "/logo.png",
+            publishedAt: new Date().toISOString(),
+            source: { name: "kissmyfootball" }
+          },
+          {
+            title: "Transfer Window Updates",
+            description: "Get the latest transfer rumors and confirmed deals from the football world.",
+            url: "#",
+            urlToImage: "/logo.png",
+            publishedAt: new Date().toISOString(),
+            source: { name: "kissmyfootball" }
+          },
+          {
+            title: "Champions League Preview",
+            description: "Get ready for the upcoming Champions League matches with team analysis and predictions.",
+            url: "#",
+            urlToImage: "/logo.png",
+            publishedAt: new Date().toISOString(),
+            source: { name: "kissmyfootball" }
+          },
+          {
+            title: "Premier League Standings",
+            description: "Latest Premier League table and top scorers after this weekend's matches.",
+            url: "#",
+            urlToImage: "/logo.png",
+            publishedAt: new Date().toISOString(),
+            source: { name: "kissmyfootball" }
+          }
+        ];
+        setNews(fallbackNews);
+        setFilteredNews(fallbackNews);
+        setError(null);
       } finally {
         setLoading(false);
       }
