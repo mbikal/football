@@ -7,18 +7,25 @@ function MatchList() {
   const [matches, setMatches] = useState<Match[]>([]);
 
   useEffect(() => {
-    setMatches(getMatches());
+    const matches = getMatches();
+    console.log('MatchList: Loaded matches:', matches);
+    console.log('MatchList: Number of matches:', matches.length);
+    setMatches(matches);
     
     // Listen for storage changes to update in real-time
     const handleStorageChange = () => {
-      setMatches(getMatches());
+      const updatedMatches = getMatches();
+      console.log('MatchList: Storage changed, updated matches:', updatedMatches);
+      setMatches(updatedMatches);
     };
     
     window.addEventListener('storage', handleStorageChange);
     
     // Custom event for same-tab updates
     const handleCustomUpdate = () => {
-      setMatches(getMatches());
+      const updatedMatches = getMatches();
+      console.log('MatchList: Custom update, matches:', updatedMatches);
+      setMatches(updatedMatches);
     };
     
     window.addEventListener('matchesUpdated', handleCustomUpdate);

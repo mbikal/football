@@ -1,15 +1,32 @@
 import type { Match } from "../types/match";
 
 const STORAGE_KEY = "football_matches";
+const STORAGE_VERSION_KEY = "football_matches_version";
+const CURRENT_VERSION = "2.0";
 
 export const getMatches = (): Match[] => {
   if (typeof window === "undefined") return [];
   
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    return JSON.parse(stored);
+  console.log('getMatches: Checking version...');
+  // Check version to force refresh when code updates
+  const storedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
+  console.log('getMatches: Stored version:', storedVersion, 'Current version:', CURRENT_VERSION);
+  if (storedVersion !== CURRENT_VERSION) {
+    console.log('getMatches: Version mismatch, clearing old data');
+    // Clear old data and set new version
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_VERSION);
   }
   
+  const stored = localStorage.getItem(STORAGE_KEY);
+  console.log('getMatches: Stored data:', stored);
+  if (stored) {
+    const parsed = JSON.parse(stored);
+    console.log('getMatches: Returning stored matches:', parsed);
+    return parsed;
+  }
+  
+  console.log('getMatches: No stored data, using default matches');
   // Default matches if none stored
   const defaultMatches: Match[] = [
     {
@@ -41,7 +58,9 @@ export const getMatches = (): Match[] => {
     },
   ];
   
+  console.log('getMatches: Setting default matches:', defaultMatches);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultMatches));
+  console.log('getMatches: Returning default matches:', defaultMatches);
   return defaultMatches;
 };
 
