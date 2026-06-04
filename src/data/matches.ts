@@ -7,19 +7,12 @@ const CURRENT_VERSION = "2.0";
 export const getMatches = (): Match[] => {
   if (typeof window === "undefined") return [];
   
-  console.log('getMatches: Checking version...');
-  // Check version to force refresh when code updates
-  const storedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
-  console.log('getMatches: Stored version:', storedVersion, 'Current version:', CURRENT_VERSION);
-  if (storedVersion !== CURRENT_VERSION) {
-    console.log('getMatches: Version mismatch, clearing old data');
-    // Clear old data and set new version
-    localStorage.removeItem(STORAGE_KEY);
-    localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_VERSION);
-  }
+  // Force clear localStorage for debugging - remove this after fixing
+  console.log('getMatches: Force clearing localStorage for debugging');
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_VERSION_KEY);
   
   const stored = localStorage.getItem(STORAGE_KEY);
-  console.log('getMatches: Stored data:', stored);
   if (stored) {
     const parsed = JSON.parse(stored);
     console.log('getMatches: Returning stored matches:', parsed);
