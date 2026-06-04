@@ -15,7 +15,7 @@ export default function VideoPage() {
   const [timeLeft, setTimeLeft] = useState("");
   const [matchStarted, setMatchStarted] = useState(false);
 
-  // ✅ AD SCRIPT (bottom banner)
+  // ✅ AD SCRIPT (bottom banner) with error handling
   useEffect(() => {
     const script1 = document.createElement("script");
     script1.innerHTML = `
@@ -33,18 +33,31 @@ export default function VideoPage() {
       "https://manhoodinvoluntaryplash.com/070cc7f3560099e01301ff26cf81dc4b/invoke.js";
     script2.async = true;
 
+    // Add error handling for the script
+    script2.onerror = () => {
+      console.warn("Ad script failed to load - this is expected behavior");
+    };
+
     document.body.appendChild(script1);
     document.body.appendChild(script2);
 
     return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
+      try {
+        if (document.body.contains(script1)) {
+          document.body.removeChild(script1);
+        }
+        if (document.body.contains(script2)) {
+          document.body.removeChild(script2);
+        }
+      } catch (error) {
+        console.warn("Error removing ad scripts:", error);
+      }
     };
   }, []);
 
   useEffect(() => {
     if (!state) {
-      navigate("/");
+      // Instead of redirecting, show an error message
       return;
     }
 
@@ -80,7 +93,70 @@ export default function VideoPage() {
     return () => clearInterval(timer);
   }, [state, navigate]);
 
-  if (!state) return null;
+  if (!state) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
+        <div style={{
+          fontSize: '64px',
+          marginBottom: '20px'
+        }}>
+          ⚽
+        </div>
+        <h1 style={{
+          fontSize: '32px',
+          marginBottom: '16px',
+          fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+        }}>
+          No Match Selected
+        </h1>
+        <p style={{
+          fontSize: '18px',
+          color: 'rgba(255, 255, 255, 0.7)',
+          marginBottom: '32px',
+          maxWidth: '500px',
+          lineHeight: '1.6'
+        }}>
+          Please select a match from the homepage to view the live stream.
+        </p>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            padding: '16px 32px',
+            background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '12px',
+            fontSize: '16px',
+            fontWeight: '600',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+            boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.4)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
+          }}
+        >
+          Go to Homepage
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div style={styles.container}>

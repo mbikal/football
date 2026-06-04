@@ -259,7 +259,7 @@ function Admin() {
                     name="team1img"
                     value={formData.team1img}
                     onChange={handleInputChange}
-                    placeholder="/src/assets/psg.png"
+                    placeholder="/psg.png"
                     style={{
                       width: '100%',
                       padding: '12px',
@@ -288,7 +288,7 @@ function Admin() {
                     name="team2img"
                     value={formData.team2img}
                     onChange={handleInputChange}
-                    placeholder="/src/assets/arsenal.png"
+                    placeholder="/arsenal.png"
                     style={{
                       width: '100%',
                       padding: '12px',

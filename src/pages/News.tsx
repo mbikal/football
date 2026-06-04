@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -30,6 +31,46 @@ function News() {
     { id: "transfers", name: "Transfers", icon: "🔄" },
     { id: "international", name: "International", icon: "🌍" },
   ];
+
+  // ✅ AD SCRIPT (bottom banner) with error handling
+  useEffect(() => {
+    const script1 = document.createElement("script");
+    script1.innerHTML = `
+      atOptions = {
+        'key' : '070cc7f3560099e01301ff26cf81dc4b',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    `;
+
+    const script2 = document.createElement("script");
+    script2.src =
+      "https://://hoodinvoluntaryplash.com/070cc7f3560099e01301ff26cf81dc4b/invoke.js";
+    script2.async = true;
+
+    // Add error handling for the script
+    script2.onerror = () => {
+      console.warn("Ad script failed to load - this is expected behavior");
+    };
+
+    document.body.appendChild(script1);
+    document.body.appendChild(script2);
+
+    return () => {
+      try {
+        if (document.body.contains(script1)) {
+          document.body.removeChild(script1);
+        }
+        if (document.body.contains(script2)) {
+          document.body.removeChild(script2);
+        }
+      } catch (error) {
+        console.warn("Error removing ad scripts:", error);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     async function fetchNews() {
@@ -321,148 +362,197 @@ function News() {
                 gap: '24px',
                 marginBottom: '48px'
               }}>
-                {filteredNews.map((article, index) => (
-                  <div
-                    key={index}
-                    onClick={() => window.open(article.url, "_blank")}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.1)',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      borderRadius: '16px',
-                      overflow: 'hidden',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                      display: 'flex',
-                      flexDirection: 'column'
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-                    }}
-                  >
-                    {/* Article Image */}
-                    {article.urlToImage ? (
-                      <div style={{
-                        width: '100%',
-                        height: '200px',
-                        overflow: 'hidden',
-                        position: 'relative'
-                      }}>
-                        <img
-                          src={article.urlToImage}
-                          alt={article.title}
-                          style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            transition: 'transform 0.3s ease'
-                          }}
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                          }}
-                        />
-                        <div style={{
-                          position: 'absolute',
-                          bottom: '0',
-                          left: '0',
-                          right: '0',
-                          height: '60px',
-                          background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)'
-                        }}></div>
-                      </div>
-                    ) : (
-                      <div style={{
-                        width: '100%',
-                        height: '200px',
-                        background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '48px'
-                      }}>
-                        ⚽
-                      </div>
-                    )}
-
-                    {/* Article Content */}
-                    <div style={{
-                      padding: '20px',
-                      flex: 1,
-                      display: 'flex',
-                      flexDirection: 'column'
-                    }}>
-                      {/* Source and Date */}
-                      <div style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        marginBottom: '12px',
-                        fontSize: '12px',
-                        color: 'rgba(255, 255, 255, 0.6)'
-                      }}>
-                        <span style={{
+                {filteredNews.map((article, index) => {
+                  // Insert ad banner after every 6 news articles
+                  const shouldShowAd = index > 0 && (index + 1) % 6 === 0;
+                  
+                  return (
+                    <React.Fragment key={index}>
+                      <div
+                        onClick={() => window.open(article.url, "_blank")}
+                        style={{
                           background: 'rgba(255, 255, 255, 0.1)',
-                          padding: '4px 8px',
-                          borderRadius: '6px'
+                          backdropFilter: 'blur(20px)',
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          borderRadius: '16px',
+                          overflow: 'hidden',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                          display: 'flex',
+                          flexDirection: 'column'
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-4px)';
+                          e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'translateY(0)';
+                          e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+                        }}
+                      >
+                        {/* Article Image */}
+                        {article.urlToImage ? (
+                          <div style={{
+                            width: '100%',
+                            height: '200px',
+                            overflow: 'hidden',
+                            position: 'relative'
+                          }}>
+                            <img
+                              src={article.urlToImage}
+                              alt={article.title}
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                transition: 'transform 0.3s ease'
+                              }}
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                            <div style={{
+                              position: 'absolute',
+                              bottom: '0',
+                              left: '0',
+                              right: '0',
+                              height: '60px',
+                              background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)'
+                            }}></div>
+                          </div>
+                        ) : (
+                          <div style={{
+                            width: '100%',
+                            height: '200px',
+                            background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '48px'
+                          }}>
+                            ⚽
+                          </div>
+                        )}
+
+                        {/* Article Content */}
+                        <div style={{
+                          padding: '20px',
+                          flex: 1,
+                          display: 'flex',
+                          flexDirection: 'column'
                         }}>
-                          {article.source?.name || 'Unknown Source'}
-                        </span>
-                        <span>
-                          {formatDate(article.publishedAt)}
-                        </span>
+                          {/* Source and Date */}
+                          <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginBottom: '12px',
+                            fontSize: '12px',
+                            color: 'rgba(255, 255, 255, 0.6)'
+                          }}>
+                            <span style={{
+                              background: 'rgba(255, 255, 255, 0.1)',
+                              padding: '4px 8px',
+                              borderRadius: '6px'
+                            }}>
+                              {article.source?.name || 'Unknown Source'}
+                            </span>
+                            <span>
+                              {formatDate(article.publishedAt)}
+                            </span>
+                          </div>
+
+                          {/* Title */}
+                          <h3 style={{
+                            fontSize: '18px',
+                            fontWeight: '600',
+                            marginBottom: '12px',
+                            lineHeight: '1.4',
+                            fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                            color: 'white',
+                            flex: 1
+                          }}>
+                            {article.title}
+                          </h3>
+
+                          {/* Description */}
+                          {article.description && (
+                            <p style={{
+                              fontSize: '14px',
+                              color: 'rgba(255, 255, 255, 0.7)',
+                              lineHeight: '1.5',
+                              marginBottom: '16px',
+                              display: '-webkit-box',
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden'
+                            }}>
+                              {article.description}
+                            </p>
+                          )}
+
+                          {/* Read More */}
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            fontSize: '14px',
+                            fontWeight: '600',
+                            color: '#60a5fa',
+                            marginTop: 'auto'
+                          }}>
+                            Read More
+                            <span>→</span>
+                          </div>
+                        </div>
                       </div>
-
-                      {/* Title */}
-                      <h3 style={{
-                        fontSize: '18px',
-                        fontWeight: '600',
-                        marginBottom: '12px',
-                        lineHeight: '1.4',
-                        fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                        color: 'white',
-                        flex: 1
-                      }}>
-                        {article.title}
-                      </h3>
-
-                      {/* Description */}
-                      {article.description && (
-                        <p style={{
-                          fontSize: '14px',
-                          color: 'rgba(255, 255, 255, 0.7)',
-                          lineHeight: '1.5',
-                          marginBottom: '16px',
-                          display: '-webkit-box',
-                          WebkitLineClamp: 3,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden'
+                      
+                      {/* Ad Banner - inserted after every 6 news articles */}
+                      {shouldShowAd && (
+                        <div style={{
+                          background: 'rgba(255, 255, 255, 0.05)',
+                          backdropFilter: 'blur(20px)',
+                          border: '1px solid rgba(255, 255, 255, 0.1)',
+                          borderRadius: '16px',
+                          padding: '20px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          minHeight: '200px',
+                          gridColumn: '1 / -1'
                         }}>
-                          {article.description}
-                        </p>
+                          <div style={{
+                            fontSize: '14px',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            marginBottom: '12px',
+                            textAlign: 'center'
+                          }}>
+                            Advertisement
+                          </div>
+                          <div style={{
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            borderRadius: '8px',
+                            padding: '8px',
+                            minWidth: '320px',
+                            minHeight: '50px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                          }}>
+                            <span style={{
+                              fontSize: '12px',
+                              color: 'rgba(255, 255, 255, 0.4)'
+                            }}>
+                              Ad Space (320x50)
+                            </span>
+                          </div>
+                        </div>
                       )}
-
-                      {/* Read More */}
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '14px',
-                        fontWeight: '600',
-                        color: '#60a5fa',
-                        marginTop: 'auto'
-                      }}>
-                        Read More
-                        <span>→</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    </React.Fragment>
+                  );
+                })}
               </div>
             )}
           </>

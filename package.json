@@ -10,12 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "cors": "^2.8.6",
-    "dashjs": "^5.1.1",
-    "express": "^5.2.1",
-    "hls.js": "^1.6.16",
-    "node-fetch": "^3.3.2",
-    "node-media-server": "^4.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router": "^7.15.0",
