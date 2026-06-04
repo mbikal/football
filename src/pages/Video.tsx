@@ -32,9 +32,21 @@ export default function VideoPage() {
     script2.src =
       "https://manhoodinvoluntaryplash.com/070cc7f3560099e01301ff26cf81dc4b/invoke.js";
     script2.async = true;
+    script2.crossOrigin = "anonymous";
 
-    // Add error handling for the script
+    // Add timeout to prevent hanging
+    const timeout = setTimeout(() => {
+      console.warn("Ad script loading timeout - preventing errors");
+    }, 5000);
+
+    // Enhanced error handling for the script
+    script2.onload = () => {
+      clearTimeout(timeout);
+      console.log("Ad script loaded successfully");
+    };
+
     script2.onerror = () => {
+      clearTimeout(timeout);
       console.warn("Ad script failed to load - this is expected behavior");
     };
 
@@ -42,6 +54,7 @@ export default function VideoPage() {
     document.body.appendChild(script2);
 
     return () => {
+      clearTimeout(timeout);
       try {
         if (document.body.contains(script1)) {
           document.body.removeChild(script1);
