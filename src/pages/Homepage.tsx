@@ -31,9 +31,20 @@ function Homepage() {
   }, []);
 
   return (
-    <div>
+    <div style={{ 
+      minHeight: '100vh', 
+      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+      color: 'white'
+    }}>
       <Header />
-      <MatchList />
+      <main style={{ 
+        flex: 1, 
+        padding: '40px 20px',
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        <MatchList />
+      </main>
       <Footer />
     </div>
   );

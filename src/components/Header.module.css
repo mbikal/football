@@ -2,7 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #333;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }

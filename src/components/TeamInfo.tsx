@@ -9,7 +9,7 @@ export function HomeTeam({ teamImg, teamName }: TeamProps) {
   return (
     <div className={styles.teamInfo}>
       <img src={teamImg} alt={teamName} />
-      <h3>{teamName}</h3>
+      <h3 className={styles.teamName}>{teamName}</h3>
     </div>
   );
 }
@@ -17,7 +17,7 @@ export function HomeTeam({ teamImg, teamName }: TeamProps) {
 export function AwayTeam({ teamImg, teamName }: TeamProps) {
   return (
     <div className={styles.teamInfo}>
-      <h3>{teamName}</h3>
+      <h3 className={styles.teamName}>{teamName}</h3>
       <img src={teamImg} alt={teamName} />
     </div>
   );
