@@ -21,6 +21,24 @@ export const getMatches = (): Match[] => {
       team1name: "PSG",
       team2name: "Arsenal",
     },
+    {
+      id: "2",
+      matchDate: "2026-05-31T20:00:00+05:45",
+      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
+      team1img: "/barca.png",
+      team2img: "/realmadrid.png",
+      team1name: "Barcelona",
+      team2name: "Real Madrid",
+    },
+    {
+      id: "3",
+      matchDate: "2026-06-01T19:30:00+05:45",
+      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
+      team1img: "/liverpool.png",
+      team2img: "/united.png",
+      team1name: "Liverpool",
+      team2name: "Manchester United",
+    },
   ];
   
   localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultMatches));
