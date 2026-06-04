@@ -18,8 +18,8 @@
 }
 
 .teamInfo img {
-    width: clamp(60px, 8vw, 80px);
-    height: clamp(60px, 8vw, 80px);
+    width: clamp(50px, 10vw, 80px);
+    height: clamp(50px, 10vw, 80px);
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
@@ -27,4 +27,32 @@
 
 .box:hover .teamInfo img {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .teamInfo {
+        padding: 8px;
+        gap: 12px;
+    }
+    
+    .teamInfo img {
+        width: clamp(40px, 12vw, 60px);
+        height: clamp(40px, 12vw, 60px);
+    }
+}
+
+@media (max-width: 480px) {
+    .teamInfo {
+        padding: 6px;
+        gap: 8px;
+    }
+    
+    .teamInfo img {
+        width: clamp(35px, 15vw, 50px);
+        height: clamp(35px, 15vw, 50px);
+    }
+    
+    .teamName {
+        font-size: clamp(12px, 3.5vw, 16px);
+    }
 }

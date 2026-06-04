@@ -39,9 +39,11 @@ function Homepage() {
       <Header />
       <main style={{ 
         flex: 1, 
-        padding: '40px 20px',
+        padding: 'clamp(20px, 5vw, 40px) clamp(15px, 4vw, 20px)',
         maxWidth: '1200px',
-        margin: '0 auto'
+        margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
         <MatchList />
       </main>
