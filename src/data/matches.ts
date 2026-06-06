@@ -24,13 +24,12 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-06T23:30:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
+      iframeUrl: "https://securedq.blogspot.com/p/2.html",
       team1img: "/portugal.png",
       team2img: "/chile.png",
       team1name: "Portugal",
       team2name: "Chile",
     },
-
   ];
   
   console.log('getMatches: Setting default matches:', defaultMatches);
