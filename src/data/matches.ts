@@ -19,11 +19,11 @@ export const getMatches = (): Match[] => {
   }
   
   console.log('getMatches: No stored data, using default matches');
-  // Default matches if none stored
+  // Default matches if none stored - all for today (June 6) with different times
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-06T23:30:00+05:45",
+      matchDate: "2026-06-06T17:00:00+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
       team1img: "/psg.png",
       team2img: "/arsenal.png",
@@ -32,7 +32,25 @@ export const getMatches = (): Match[] => {
     },
     {
       id: "2",
-      matchDate: "2026-06-07T20:00:00+05:45",
+      matchDate: "2026-06-06T18:45:00+05:45",
+      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
+      team1img: "/alnassr.png",
+      team2img: "/damac.png",
+      team1name: "Al Nassr",
+      team2name: "Damac",
+    },
+    {
+      id: "3",
+      matchDate: "2026-06-06T20:15:00+05:45",
+      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
+      team1img: "/city.png",
+      team2img: "/astonvilla.png",
+      team1name: "Man City",
+      team2name: "Aston Villa",
+    },
+    {
+      id: "4",
+      matchDate: "2026-06-06T22:00:00+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
       team1img: "/barca.png",
       team2img: "/realmadrid.png",
@@ -40,13 +58,13 @@ export const getMatches = (): Match[] => {
       team2name: "Real Madrid",
     },
     {
-      id: "3",
-      matchDate: "2026-06-08T19:30:00+05:45",
+      id: "5",
+      matchDate: "2026-06-06T23:30:00+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
       team1img: "/liverpool.png",
       team2img: "/united.png",
       team1name: "Liverpool",
-      team2name: "Manchester United",
+      team2name: "Man United",
     },
   ];
   
