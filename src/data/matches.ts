@@ -23,31 +23,14 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-05-30T21:45:00+05:45",
+      matchDate: "2026-06-06T21:30:23+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
-      team1img: "/psg.png",
-      team2img: "/arsenal.png",
-      team1name: "PSG",
-      team2name: "Arsenal",
+      team1img: "/portugal.png",
+      team2img: "/chile.png",
+      team1name: "Portugal",
+      team2name: "Chile",
     },
-    {
-      id: "2",
-      matchDate: "2026-05-31T20:00:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
-      team1img: "/barca.png",
-      team2img: "/realmadrid.png",
-      team1name: "Barcelona",
-      team2name: "Real Madrid",
-    },
-    {
-      id: "3",
-      matchDate: "2026-06-01T19:30:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/4.html",
-      team1img: "/liverpool.png",
-      team2img: "/united.png",
-      team1name: "Liverpool",
-      team2name: "Manchester United",
-    },
+    
   ];
   
   console.log('getMatches: Setting default matches:', defaultMatches);
