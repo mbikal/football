@@ -23,12 +23,21 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-06T23:30:00+05:45",
+      matchDate: "2026-06-12T00:45:00+05:45",
       iframeUrl: "https://securedq.blogspot.com/p/2.html",
-      team1img: "/portugal.png",
-      team2img: "/chile.png",
-      team1name: "Portugal",
-      team2name: "Chile",
+      team1img: "/mexico.png",
+      team2img: "/southafrica.png",
+      team1name: "Mexico",
+      team2name: "South Africa",
+    },
+    {
+      id: "2",
+      matchDate: "2026-06-12T07:45:00+05:45",
+      iframeUrl: "https://securedq.blogspot.com/p/2.html",
+      team1img: "/southKorea.png",
+      team2img: "/czech.png",
+      team1name: "South Korea",
+      team2name: "Czech Republic",
     },
   ];
   
