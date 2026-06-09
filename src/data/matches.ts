@@ -48,6 +48,15 @@ export const getMatches = (): Match[] => {
       team1name: "Canada",
       team2name: "Bosnia and Herzegovina",
     },
+    {
+      id: "4",
+      matchDate: "2026-06-13T06:45:00+05:45",
+      iframeUrl: "https://securedq.blogspot.com/p/2.html",
+      team1img: "/usa.png",
+      team2img: "/paraguay.png",
+      team1name: "USA",
+      team2name: "Paraguay",
+    },
   ];
   
   console.log('getMatches: Setting default matches:', defaultMatches);
