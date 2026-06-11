@@ -24,7 +24,7 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-12T00:45:00+05:45",
-      iframeUrl: "https://securedq.blogspot.com/p/6.html",
+      iframeUrl: "https://securedq.blogspot.com/p/2.html",
       team1img: "/mexico.png",
       team2img: "/southafrica.png",
       team1name: "Mexico",
