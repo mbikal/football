@@ -23,24 +23,6 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-12T00:45:00+05:45",
-      iframeUrl: "https://securedq.blogspot.com/p/2.html",
-      team1img: "/mexico.png",
-      team2img: "/southafrica.png",
-      team1name: "Mexico",
-      team2name: "South Africa",
-    },
-    {
-      id: "2",
-      matchDate: "2026-06-12T07:45:00+05:45",
-      iframeUrl: "https://securedq.blogspot.com/p/2.html",
-      team1img: "/southKorea.png",
-      team2img: "/czech.png",
-      team1name: "South Korea",
-      team2name: "Czech Republic",
-    },
-    {
-      id: "3",
       matchDate: "2026-06-13T00:45:00+05:45",
       iframeUrl: "https://securedq.blogspot.com/p/2.html",
       team1img: "/canada.png",
@@ -49,7 +31,7 @@ export const getMatches = (): Match[] => {
       team2name: "Bosnia and Herzegovina",
     },
     {
-      id: "4",
+      id: "2",
       matchDate: "2026-06-13T06:45:00+05:45",
       iframeUrl: "https://securedq.blogspot.com/p/2.html",
       team1img: "/usa.png",
