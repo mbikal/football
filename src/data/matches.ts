@@ -33,7 +33,7 @@ export const getMatches = (): Match[] => {
     {
       id: "2",
       matchDate: "2026-06-13T06:45:00+05:45",
-      iframeUrl: "https://securedq.blogspot.com/p/2.html",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc3.html",
       team1img: "/usa.png",
       team2img: "/paraguay.png",
       team1name: "USA",
