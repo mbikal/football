@@ -23,21 +23,21 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-13T00:45:00+05:45",
+      matchDate: "2026-06-14T00:45:00+05:45",
       iframeUrl: "https://securedq.blogspot.com/p/2.html",
-      team1img: "/canada.png",
-      team2img: "/bosnia.png",
-      team1name: "Canada",
-      team2name: "Bosnia and Herzegovina",
+      team1img: "/qatar.png",
+      team2img: "/swiss.png",
+      team1name: "Qatar",
+      team2name: "Switzerland",
     },
     {
       id: "2",
-      matchDate: "2026-06-13T06:45:00+05:45",
+      matchDate: "2026-06-14T03:45:00+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/wc6.html",
-      team1img: "/usa.png",
-      team2img: "/paraguay.png",
-      team1name: "USA",
-      team2name: "Paraguay",
+      team1img: "/brasil.png",
+      team2img: "/morocco.png",
+      team1name: "Brasil",
+      team2name: "Morocco",
     },
   ];
 
