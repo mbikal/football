@@ -24,7 +24,7 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-15T21:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc6.html",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc5.html",
       team1img: "/spain.png",
       team2img: "/cape.png",
       team1name: "Spain",
@@ -33,7 +33,7 @@ export const getMatches = (): Match[] => {
     {
       id: "2",
       matchDate: "2026-06-16T03:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc6.html",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc5.html",
       team1img: "/saudi.png",
       team2img: "/japan.png",
       team1name: "Saudi Arabia",
@@ -42,7 +42,7 @@ export const getMatches = (): Match[] => {
     {
       id: "3",
       matchDate: "2026-06-15T00:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc6.html",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc5.html",
       team1img: "/belgium.png",
       team2img: "/epgyt.png",
       team1name: "Belgium",
