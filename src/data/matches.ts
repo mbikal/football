@@ -24,7 +24,7 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-21T01:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc20.html?m=1",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc19.html",
       team1img: "/germany.png",
       team2img: "/ivory.png",
       team1name: "Germany",
