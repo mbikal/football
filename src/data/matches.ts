@@ -24,30 +24,13 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-21T01:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc19.html",
-      team1img: "/germany.png",
-      team2img: "/ivory.png",
-      team1name: "Germany",
-      team2name: "Ivory Coast",
+      iframeUrl: "https://ftmesc.blogspot.com/p/wc2.html",
+      team1img: "/spain.png",
+      team2img: "/saudi.png",
+      team1name: "Spain",
+      team2name: "Saudi",
     },
-    {
-      id: "2",
-      matchDate: "2026-06-21T05:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc20.html?m=1",
-      team1img: "/ecuador.png",
-      team2img: "/curacao.png",
-      team1name: "Ecuador",
-      team2name: "Curacao",
-    },
-    {
-      id: "3",
-      matchDate: "2026-06-21T09:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc20.html?m=1",
-      team1img: "/tunisia.png",
-      team2img: "/japan.png",
-      team1name: "Tunisia",
-      team2name: "Japan",
-    },
+  
   ];
 
   console.log("getMatches: Setting default matches:", defaultMatches);
