@@ -23,7 +23,7 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-21T022:45:00+05:45",
+      matchDate: "2026-06-21T22:45:00+05:45",
       iframeUrl: "https://ftmesc.blogspot.com/p/wc2.html",
       team1img: "/argentina.png",
       team2img: "/austria.png",
