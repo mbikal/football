@@ -24,14 +24,13 @@ export const getMatches = (): Match[] => {
     {
       id: "1",
       matchDate: "2026-06-21T22:45:00+05:45",
-      iframeUrl: "https://ftmesc.blogspot.com/p/wc2.html",
+      iframeUrl:
+        "https://socolive23.cv/truc-tiep/argentina-vs-austria-23-06-2026-0000/",
       team1img: "/argentina.png",
       team2img: "/austria.png",
       team1name: "Argentina",
       team2name: "Austria",
     },
-    
-  
   ];
 
   console.log("getMatches: Setting default matches:", defaultMatches);
