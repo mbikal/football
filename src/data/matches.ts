@@ -33,7 +33,7 @@ export const getMatches = (): Match[] => {
     },
     {
       id: "2",
-      matchDate: "2026-06-21T22:45:00+05:45",
+      matchDate: "2026-06-23T02:45:00+05:45",
       iframeUrl:
         "https://socolive23.cv/truc-tiep/argentina-vs-austria-23-06-2026-0000/",
       team1img: "/france.png",
