@@ -23,36 +23,6 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-23T02:40:00+05:45",
-      iframeUrl:
-        "https://socolive23.cv/truc-tiep/france-vs-iraq-23-06-2026-0400/",
-      team1img: "/france.png",
-      team2img: "/iraq.png",
-      team1name: "France",
-      team2name: "Iraq",
-    },
-    {
-      id: "2",
-      matchDate: "2026-06-23T05:40:00+05:45",
-      iframeUrl:
-        "https://socolive23.cv/truc-tiep/norway-vs-senegal-23-06-2026-0700/",
-      team1img: "/norway.png",
-      team2img: "/senegal.png",
-      team1name: "Norway",
-      team2name: "Senegal",
-    },
-    {
-      id: "3",
-      matchDate: "2026-06-23T08:40:00+05:45",
-      iframeUrl:
-        "https://socolive23.cv/truc-tiep/norway-vs-senegal-23-06-2026-0700/",
-      team1img: "/norway.png",
-      team2img: "/senegal.png",
-      team1name: "Norway",
-      team2name: "Senegal",
-    },
-    {
-      id: "4",
       matchDate: "2026-06-23T22:40:00+05:45",
       iframeUrl:
         "https://socolive23.cv/truc-tiep/portugal-vs-uzbekistan-24-06-2026-0000/",
