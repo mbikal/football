@@ -57,9 +57,9 @@ export const getMatches = (): Match[] => {
       iframeUrl:
         "https://socolive23.cv/truc-tiep/portugal-vs-uzbekistan-24-06-2026-0000/",
       team1img: "/portugal.png",
-      team2img: "/u.png",
-      team1name: "Norway",
-      team2name: "Senegal",
+      team2img: "/uzbekistan.png",
+      team1name: "Portugal",
+      team2name: "Uzbekistan",
     },
   ];
 
