@@ -23,33 +23,133 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-24T01:40:00+05:45",
+      matchDate: "2026-06-25T00:40:00+05:45",
       iframeUrl:
-        "https://socolive24.cv/truc-tiep/england-vs-ghana-24-06-2026-0300/",
-      team1img: "/england.png",
-      team2img: "/ghana.png",
-      team1name: "England",
-      team2name: "Ghana",
+        "https://socolive25.cv/truc-tiep/switzerland-vs-canada-25-06-2026-0200/",
+      team1img: "/swiss.png",
+      team2img: "/canada.png",
+      team1name: "Switzerland",
+      team2name: "Canada",
     },
     {
       id: "2",
-      matchDate: "2026-06-24T04:40:00+05:45",
+      matchDate: "2026-06-25T00:40:00+05:45",
       iframeUrl:
-        "https://socolive24.cv/truc-tiep/panama-vs-croatia-24-06-2026-0600/",
-      team1img: "/panama.png",
-      team2img: "/croatia.png",
-      team1name: "Panama",
-      team2name: "Croatia",
+        "https://socolive25.cv/truc-tiep/bosnia-and-herzegovina-vs-qatar-25-06-2026-0200/",
+      team1img: "/bosnia.png",
+      team2img: "/qatar.png",
+      team1name: "Bosnia",
+      team2name: "Qatar",
     },
     {
       id: "3",
-      matchDate: "2026-06-24T07:40:00+05:45",
+      matchDate: "2026-06-25T03:40:00+05:45",
       iframeUrl:
-        "https://socolive24.cv/truc-tiep/colombia-vs-democratic-republic-of-the-congo-24-06-2026-0900/",
-      team1img: "/colombia.png",
-      team2img: "/congo.png",
-      team1name: "Colombia",
-      team2name: "Dr Congo",
+        "https://socolive25.cv/truc-tiep/morocco-vs-haiti-25-06-2026-0500/",
+      team1img: "/morocco.png",
+      team2img: "/haiti.png",
+      team1name: "Morocco",
+      team2name: "Haiti",
+    },
+    {
+      id: "4",
+      matchDate: "2026-06-25T03:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/scotland-vs-brazil-25-06-2026-0500/",
+      team1img: "/scotland.png",
+      team2img: "/brasil.png",
+      team1name: "Scotland",
+      team2name: "Brazil",
+    },
+    {
+      id: "5",
+      matchDate: "2026-06-25T06:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/south-africa-vs-south-korea-25-06-2026-0800/",
+      team1img: "/southafrica.png",
+      team2img: "/southKorea.png",
+      team1name: "South Africa",
+      team2name: "South Korea",
+    },
+    {
+      id: "6",
+      matchDate: "2026-06-25T06:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/czechia-vs-mexico-25-06-2026-0800/",
+      team1img: "/czech.png",
+      team2img: "/mexico.png",
+      team1name: "Czechia",
+      team2name: "Mexico",
+    },
+    {
+      id: "6",
+      matchDate: "2026-06-25T06:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/czechia-vs-mexico-25-06-2026-0800/",
+      team1img: "/czech.png",
+      team2img: "/mexico.png",
+      team1name: "Czechia",
+      team2name: "Mexico",
+    },
+    {
+      id: "7",
+      matchDate: "2026-06-26T01:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/curacao-vs-cote-divoire-26-06-2026-0300/",
+      team1img: "/curacao.png",
+      team2img: "/ivory.png",
+      team1name: "Curacao",
+      team2name: "Ivory Coast",
+    },
+    {
+      id: "8",
+      matchDate: "2026-06-25T01:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/ecuador-vs-germany-26-06-2026-0300/",
+      team1img: "/ecuador.png",
+      team2img: "/germany.png",
+      team1name: "Curacao",
+      team2name: "Ivory Coast",
+    },
+    {
+      id: "9",
+      matchDate: "2026-06-25T04:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/tunisia-vs-netherlands-26-06-2026-0600/",
+      team1img: "/tunisia.png",
+      team2img: "/netherland.png",
+      team1name: "Tunisia",
+      team2name: "Netherlands",
+    },
+    {
+      id: "10",
+      matchDate: "2026-06-25T04:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/japan-vs-sweden-26-06-2026-0600/",
+      team1img: "/japan.png",
+      team2img: "/sweden.png",
+      team1name: "Japan",
+      team2name: "Sweden",
+    },
+    {
+      id: "11",
+      matchDate: "2026-06-25T07:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/turkiye-vs-usa-26-06-2026-0900/",
+      team1img: "/turkiye.png",
+      team2img: "/usa.png",
+      team1name: "Turkiye",
+      team2name: "USA",
+    },
+    {
+      id: "12",
+      matchDate: "2026-06-25T07:40:00+05:45",
+      iframeUrl:
+        "https://socolive25.cv/truc-tiep/paraguay-vs-australia-26-06-2026-0900/",
+      team1img: "/paraguay.png",
+      team2img: "/australia.png",
+      team1name: "Paraguay",
+      team2name: "Australia",
     },
   ];
 
