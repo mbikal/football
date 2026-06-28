@@ -23,63 +23,21 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-28T02:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/panama-vs-england-28-06-2026-0400/",
-      team1img: "/panama.png",
-      team2img: "/england.png",
-      team1name: "Panama",
-      team2name: "England",
+      matchDate: "2026-06-29T00:40:00+05:45",
+      iframeUrl: "http://socolive28.cv/truc-tiep/a2-vs-b2-29-06-2026-0200/",
+      team1img: "/southafrica.png",
+      team2img: "/canada.png",
+      team1name: "South Africa",
+      team2name: "Canada",
     },
     {
       id: "2",
-      matchDate: "2026-06-28T02:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/croatia-vs-ghana-28-06-2026-0400/",
-      team1img: "/croatia.png",
-      team2img: "/ghana.png",
-      team1name: "Croatia",
-      team2name: "Ghana",
-    },
-    {
-      id: "3",
-      matchDate: "2026-06-28T05:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/colombia-vs-portugal-28-06-2026-0630/",
-      team1img: "/colombia.png",
-      team2img: "/portugal.png",
-      team1name: "Colombia",
-      team2name: "Portugal",
-    },
-    {
-      id: "4",
-      matchDate: "2026-06-27T05:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/democratic-republic-of-the-congo-vs-uzbekistan-28-06-2026-0630/",
-      team1img: "/congo.png",
-      team2img: "/uzbekistan.png",
-      team1name: "DR Congo",
-      team2name: "Uzbekistan",
-    },
-    {
-      id: "5",
-      matchDate: "2026-06-28T07:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/jordan-vs-argentina-28-06-2026-0900/",
-      team1img: "/jordan.png",
-      team2img: "/argentina.png",
-      team1name: "Jordan",
-      team2name: "Argentina",
-    },
-    {
-      id: "6",
-      matchDate: "2026-06-28T07:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/algeria-vs-austria-28-06-2026-0900/",
-      team1img: "/algeria.png",
-      team2img: "/austria.png",
-      team1name: "Algeria",
-      team2name: "Austria",
+      matchDate: "2026-06-29T22:40:00+05:45",
+      iframeUrl: "https://socolive28.cv/truc-tiep/c1-vs-f2-30-06-2026-0000/",
+      team1img: "/brasil.png",
+      team2img: "/japan.png",
+      team1name: "Brazil",
+      team2name: "Japan",
     },
   ];
 
