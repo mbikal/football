@@ -43,8 +43,7 @@ export const getMatches = (): Match[] => {
     {
       id: "3",
       matchDate: "2026-06-30T06:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
+      iframeUrl: "https://socolive28.cv/truc-tiep/f1-vs-c2-30-06-2026-0800/",
       team1img: "/netherland.png",
       team2img: "/morocco.png",
       team1name: "Netherland",
@@ -53,8 +52,7 @@ export const getMatches = (): Match[] => {
     {
       id: "4",
       matchDate: "2026-06-30T22:40:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
+      iframeUrl: "https://socolive28.cv/truc-tiep/e2-vs-i2-01-07-2026-0000/",
       team1img: "/ivory.png",
       team2img: "/norway.png",
       team1name: "Ivory Coast",
