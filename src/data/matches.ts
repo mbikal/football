@@ -23,21 +23,42 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-29T00:40:00+05:45",
-      iframeUrl: "http://socolive28.cv/truc-tiep/a2-vs-b2-29-06-2026-0200/",
-      team1img: "/southafrica.png",
-      team2img: "/canada.png",
-      team1name: "South Africa",
-      team2name: "Canada",
-    },
-    {
-      id: "2",
       matchDate: "2026-06-29T22:40:00+05:45",
       iframeUrl: "https://socolive28.cv/truc-tiep/c1-vs-f2-30-06-2026-0000/",
       team1img: "/brasil.png",
       team2img: "/japan.png",
       team1name: "Brazil",
       team2name: "Japan",
+    },
+    {
+      id: "2",
+      matchDate: "2026-06-30T02:10:00+05:45",
+      iframeUrl:
+        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
+      team1img: "/germany.png",
+      team2img: "/paraguay.png",
+      team1name: "Germany",
+      team2name: "Paraguay",
+    },
+    {
+      id: "3",
+      matchDate: "2026-06-30T06:40:00+05:45",
+      iframeUrl:
+        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
+      team1img: "/netherland.png",
+      team2img: "/morocco.png",
+      team1name: "Netherland",
+      team2name: "Morocco",
+    },
+    {
+      id: "4",
+      matchDate: "2026-06-30T22:40:00+05:45",
+      iframeUrl:
+        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
+      team1img: "/ivory.png",
+      team2img: "/norway.png",
+      team1name: "Ivory Coast",
+      team2name: "Norway",
     },
   ];
 
