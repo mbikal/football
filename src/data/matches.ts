@@ -23,40 +23,42 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-29T22:40:00+05:45",
-      iframeUrl: "https://socolive28.cv/truc-tiep/c1-vs-f2-30-06-2026-0000/",
-      team1img: "/brasil.png",
-      team2img: "/japan.png",
-      team1name: "Brazil",
-      team2name: "Japan",
-    },
-    {
-      id: "2",
-      matchDate: "2026-06-30T02:10:00+05:45",
-      iframeUrl:
-        "https://socolive28.cv/truc-tiep/germany-vs-a3-b3-c3-d3-f3-30-06-2026-0330/",
-      team1img: "/germany.png",
-      team2img: "/paraguay.png",
-      team1name: "Germany",
-      team2name: "Paraguay",
-    },
-    {
-      id: "3",
-      matchDate: "2026-06-30T06:40:00+05:45",
-      iframeUrl: "https://socolive28.cv/truc-tiep/f1-vs-c2-30-06-2026-0800/",
-      team1img: "/netherland.png",
-      team2img: "/morocco.png",
-      team1name: "Netherland",
-      team2name: "Morocco",
-    },
-    {
-      id: "4",
       matchDate: "2026-06-30T22:40:00+05:45",
-      iframeUrl: "https://socolive28.cv/truc-tiep/e2-vs-i2-01-07-2026-0000/",
+      iframeUrl: "https://socolivea.cv/truc-tiep/e2-vs-i2-01-07-2026-0000/",
       team1img: "/ivory.png",
       team2img: "/norway.png",
       team1name: "Ivory Coast",
       team2name: "Norway",
+    },
+    {
+      id: "2",
+      matchDate: "2026-06-31T02:10:00+05:45",
+      iframeUrl:
+        "https://socolivea.cv/truc-tiep/i1-vs-c3-d3-f3-g3-h3-01-07-2026-0400/",
+      team1img: "/france.png",
+      team2img: "/sweden.png",
+      team1name: "France",
+      team2name: "Sweden",
+    },
+    {
+      id: "3",
+      matchDate: "2026-06-31T06:40:00+05:45",
+      iframeUrl:
+        "https://socolivea.cv/truc-tiep/mexico-vs-c3-e3-f3-h3-i3-01-07-2026-0800/",
+      team1img: "/mexico.png",
+      team2img: "/ecuador.png",
+      team1name: "Mexico",
+      team2name: "Ecuador",
+    },
+    {
+      id: "4",
+      matchDate: "2026-06-31T22:40:00+05:45",
+      iframeUrl:
+        "https://socolivea.cv/truc-tiep/l1-vs-e3-h3-i3-j3-k3-01-07-2026-2300/",
+      team1img: "/england.png",
+      team2img: "/congo.png",
+      team1name: "England",
+      team2name: "DR Congo",
     },
   ];
 
