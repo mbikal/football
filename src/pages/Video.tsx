@@ -70,9 +70,50 @@ export default function VideoPage() {
 
   useEffect(() => {
     if (!state) {
-      // Instead of redirecting, show an error message
+      document.title = "Watch Live Football Streams - World Cup Live | KissMyFootball";
       return;
     }
+
+    const { team1name, team2name, matchDate } = state as any;
+    const matchName = `${team1name} vs ${team2name}`;
+    
+    // Dynamic SEO updates
+    document.title = `Watch ${matchName} Live Stream - World Cup Live | KissMyFootball`;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', `Watch free live football streaming for ${matchName}. Stay tuned for World Cup live streams, live soccer matches, and football news on KissMyFootball.`);
+    }
+
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', `${team1name} vs ${team2name} live, watch ${team1name} online, world cup live stream, free live football, kissmyfootball`);
+    }
+
+    // JSON-LD Structured Data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": `${team1name} vs ${team2name} Live Stream`,
+      "startDate": new Date(matchDate).toISOString(),
+      "description": `Watch free live stream of ${team1name} vs ${team2name} match on KissMyFootball.`,
+      "sport": "https://en.wikipedia.org/wiki/Association_football",
+      "competitor": [
+        {
+          "@type": "SportsTeam",
+          "name": team1name
+        },
+        {
+          "@type": "SportsTeam",
+          "name": team2name
+        }
+      ]
+    };
+
+    const scriptLD = document.createElement('script');
+    scriptLD.type = 'application/ld+json';
+    scriptLD.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(scriptLD);
 
     let timer: ReturnType<typeof setInterval>;
 
@@ -103,7 +144,12 @@ export default function VideoPage() {
     updateTimer();
     timer = setInterval(updateTimer, 1000);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      if (document.head.contains(scriptLD)) {
+        document.head.removeChild(scriptLD);
+      }
+    };
   }, [state, navigate]);
 
   if (!state) {

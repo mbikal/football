@@ -33,8 +33,35 @@ function News() {
     { id: "international", name: "International", icon: "🌍" },
   ];
 
-  // ✅ AD SCRIPT (bottom banner) with error handling
+  // ✅ AD SCRIPT (bottom banner) with error handling & SEO updates
   useEffect(() => {
+    // Dynamic SEO update
+    document.title = "Latest Football News, Transfer Rumors & World Cup Updates | KissMyFootball";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Stay up-to-date with the latest football news, breaking transfer rumors, league updates, and World Cup live news coverage on KissMyFootball.');
+    }
+    
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'football news, soccer news, transfer rumors, world cup live news, kissmyfootball');
+    }
+
+    // JSON-LD Structured Data for News Collection
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Latest Football News",
+      "url": window.location.origin + "/news",
+      "description": "Stay up-to-date with the latest football news, breaking transfer rumors, league updates, and World Cup live news coverage on KissMyFootball."
+    };
+    
+    const scriptLD = document.createElement('script');
+    scriptLD.type = 'application/ld+json';
+    scriptLD.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(scriptLD);
+
     const script1 = document.createElement("script");
     script1.innerHTML = `
       atOptions = {
@@ -72,6 +99,9 @@ function News() {
 
     return () => {
       clearTimeout(timeout);
+      if (document.head.contains(scriptLD)) {
+        document.head.removeChild(scriptLD);
+      }
       try {
         if (document.body.contains(script1)) {
           document.body.removeChild(script1);

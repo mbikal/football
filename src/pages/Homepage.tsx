@@ -5,6 +5,33 @@ import MatchList from "../components/MatchList";
 
 function Homepage() {
   useEffect(() => {
+    // Dynamic SEO update
+    document.title = "KissMyFootball - Football News & World Cup Live Streams";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Watch free live football streaming, World Cup live matches, get latest football news, transfer rumors, and match schedules on KissMyFootball.');
+    }
+    
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'world cup live, football news, live football streaming, soccer streams, kissmyfootball');
+    }
+
+    // JSON-LD Structured Data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "KissMyFootball",
+      "url": window.location.origin,
+      "description": "Watch free live football streaming, World Cup live matches, get latest football news, transfer rumors, and match schedules on KissMyFootball."
+    };
+    
+    const scriptLD = document.createElement('script');
+    scriptLD.type = 'application/ld+json';
+    scriptLD.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(scriptLD);
+
     const script1 = document.createElement("script");
     script1.innerHTML = `
       atOptions = {
@@ -25,8 +52,19 @@ function Homepage() {
     document.body.appendChild(script2);
 
     return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
+      if (document.head.contains(scriptLD)) {
+        document.head.removeChild(scriptLD);
+      }
+      try {
+        if (document.body.contains(script1)) {
+          document.body.removeChild(script1);
+        }
+        if (document.body.contains(script2)) {
+          document.body.removeChild(script2);
+        }
+      } catch (err) {
+        console.warn("Error cleaning up ad script:", err);
+      }
     };
   }, []);
 
