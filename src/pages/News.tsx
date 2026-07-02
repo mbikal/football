@@ -90,19 +90,18 @@ function News() {
         setLoading(true);
         setError(null);
 
-        console.log('News: Attempting to fetch news...');
+        const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+        const url = isLocalhost
+          ? `https://newsapi.org/v2/everything?q=football&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`
+          : "/api/news";
 
-        const res = await fetch(
-          `https://newsapi.org/v2/everything?q=football&sortBy=publishedAt&pageSize=100&apiKey=${API_KEY}`,
-          {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-            },
-            mode: 'cors'
+        const res = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
           }
-        );
+        });
 
         console.log('News: API response status:', res.status);
 
@@ -445,24 +444,26 @@ function News() {
                       <div
                         onClick={() => window.open(article.url, "_blank")}
                         style={{
-                          background: 'rgba(255, 255, 255, 0.1)',
+                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%)',
                           backdropFilter: 'blur(20px)',
-                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          border: '1px solid rgba(255, 255, 255, 0.08)',
                           borderRadius: '16px',
                           overflow: 'hidden',
                           cursor: 'pointer',
                           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
                           display: 'flex',
                           flexDirection: 'column'
                         }}
                         onMouseOver={(e) => {
                           e.currentTarget.style.transform = 'translateY(-4px)';
-                          e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+                          e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.25)';
+                          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
                         }}
                         onMouseOut={(e) => {
                           e.currentTarget.style.transform = 'translateY(0)';
-                          e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+                          e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+                          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
                         }}
                       >
                         {/* Article Image */}
@@ -474,7 +475,7 @@ function News() {
                             position: 'relative'
                           }}>
                             <img
-                              src={article.urlToImage}
+                               src={article.urlToImage}
                               alt={article.title}
                               style={{
                                 width: '100%',
@@ -483,7 +484,7 @@ function News() {
                                 transition: 'transform 0.3s ease'
                               }}
                               onError={(e) => {
-                                e.currentTarget.style.display = 'none';
+                                 e.currentTarget.style.display = 'none';
                               }}
                             />
                             <div style={{
@@ -499,7 +500,7 @@ function News() {
                           <div style={{
                             width: '100%',
                             height: '200px',
-                            background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+                            background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -508,7 +509,7 @@ function News() {
                             ⚽
                           </div>
                         )}
-
+ 
                         {/* Article Content */}
                         <div style={{
                           padding: '20px',
@@ -526,9 +527,12 @@ function News() {
                             color: 'rgba(255, 255, 255, 0.6)'
                           }}>
                             <span style={{
-                              background: 'rgba(255, 255, 255, 0.1)',
-                              padding: '4px 8px',
-                              borderRadius: '6px'
+                              background: 'rgba(59, 130, 246, 0.15)',
+                              color: '#60a5fa',
+                              border: '1px solid rgba(59, 130, 246, 0.25)',
+                              padding: '4px 10px',
+                              borderRadius: '20px',
+                              fontWeight: '600'
                             }}>
                               {article.source?.name || 'Unknown Source'}
                             </span>
@@ -536,7 +540,7 @@ function News() {
                               {formatDate(article.publishedAt)}
                             </span>
                           </div>
-
+ 
                           {/* Title */}
                           <h3 style={{
                             fontSize: '18px',

@@ -7,7 +7,7 @@ type TeamProps = {
 
 export function HomeTeam({ teamImg, teamName }: TeamProps) {
   return (
-    <div className={styles.teamInfo}>
+    <div className={`${styles.teamInfo} ${styles.home}`}>
       <img 
         src={teamImg} 
         alt={teamName}
@@ -22,8 +22,7 @@ export function HomeTeam({ teamImg, teamName }: TeamProps) {
 
 export function AwayTeam({ teamImg, teamName }: TeamProps) {
   return (
-    <div className={styles.teamInfo}>
-      <h3 className={styles.teamName}>{teamName}</h3>
+    <div className={`${styles.teamInfo} ${styles.away}`}>
       <img 
         src={teamImg} 
         alt={teamName}
@@ -31,6 +30,7 @@ export function AwayTeam({ teamImg, teamName }: TeamProps) {
           e.currentTarget.src = "/logo.png"; // Fallback to default logo
         }}
       />
+      <h3 className={styles.teamName}>{teamName}</h3>
     </div>
   );
 }

@@ -8,51 +8,61 @@
     min-width: 0;
 }
 
+.home {
+    flex-direction: row;
+}
+
+.away {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
 .teamName {
-    font-size: clamp(16px, 2.5vw, 20px);
-    font-weight: 600;
+    font-size: clamp(16px, 2.5vw, 18px);
+    font-weight: 700;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     opacity: 0.9;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .teamInfo img {
-    width: clamp(50px, 10vw, 80px);
-    height: clamp(50px, 10vw, 80px);
+    width: clamp(48px, 8vw, 64px);
+    height: clamp(48px, 8vw, 64px);
     object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
 }
 
-.box:hover .teamInfo img {
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .teamInfo {
-        padding: 8px;
-        gap: 12px;
-    }
-    
-    .teamInfo img {
-        width: clamp(40px, 12vw, 60px);
-        height: clamp(40px, 12vw, 60px);
-    }
-}
-
-@media (max-width: 480px) {
-    .teamInfo {
-        padding: 6px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
         gap: 8px;
+        padding: 4px;
     }
     
+    .home, .away {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .teamInfo img {
-        width: clamp(35px, 15vw, 50px);
-        height: clamp(35px, 15vw, 50px);
+        width: 44px;
+        height: 44px;
     }
     
     .teamName {
-        font-size: clamp(12px, 3.5vw, 16px);
+        font-size: 13px;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }

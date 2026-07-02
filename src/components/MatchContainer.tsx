@@ -44,11 +44,26 @@ function MatchContainer({
     });
   }
 
+  const now = new Date();
+  const matchTime = new Date(matchDate);
+  const matchEndTime = new Date(matchTime.getTime() + 2 * 60 * 60 * 1000); // 2 hours
+  const isLive = now >= matchTime && now <= matchEndTime;
+
   return (
     <div className={styles.box} onClick={handleClick}>
       <HomeTeam teamImg={team1img} teamName={team1name} />
 
-      <div className={styles.matchTime}>{formatLocalTime(matchDate)}</div>
+      <div className={styles.centerBox}>
+        {isLive ? (
+          <div className={styles.liveBadge}>
+            <span className={styles.liveDot}></span> Live
+          </div>
+        ) : (
+          <div className={styles.upcomingBadge}>Upcoming</div>
+        )}
+        <div className={styles.matchTime}>{formatLocalTime(matchDate)}</div>
+        <div className={styles.matchDate}>{formatLocalDate(matchDate)}</div>
+      </div>
 
       <AwayTeam teamImg={team2img} teamName={team2name} />
     </div>
@@ -61,6 +76,24 @@ function formatLocalTime(dateString: string): string {
     minute: "2-digit",
     hour12: true,
   });
+}
+
+function formatLocalDate(dateString: string): string {
+  const date = new Date(dateString);
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
+
+  if (date.toDateString() === today.toDateString()) {
+    return "Today";
+  } else if (date.toDateString() === tomorrow.toDateString()) {
+    return "Tomorrow";
+  } else {
+    return date.toLocaleDateString(undefined, {
+      month: "short",
+      day: "numeric",
+    });
+  }
 }
 
 export default MatchContainer;
