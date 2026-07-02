@@ -6,19 +6,6 @@ const STORAGE_VERSION_KEY = "football_matches_version";
 export const getMatches = (): Match[] => {
   if (typeof window === "undefined") return [];
 
-  // Force clear localStorage for debugging - remove this after fixing
-  console.log("getMatches: Force clearing localStorage for debugging");
-  localStorage.removeItem(STORAGE_KEY);
-  localStorage.removeItem(STORAGE_VERSION_KEY);
-
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    const parsed = JSON.parse(stored);
-    console.log("getMatches: Returning stored matches:", parsed);
-    return parsed;
-  }
-
-  console.log("getMatches: No stored data, using default matches");
   // Default matches if none stored - all for today (June 6) with different times
   const defaultMatches: Match[] = [
     {
@@ -51,9 +38,32 @@ export const getMatches = (): Match[] => {
     },
   ];
 
-  console.log("getMatches: Setting default matches:", defaultMatches);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultMatches));
-  console.log("getMatches: Returning default matches:", defaultMatches);
+  // Fingerprint the default matches to detect updates in the codebase
+  const defaultMatchesStr = JSON.stringify(defaultMatches);
+  const storedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
+
+  // If codebase default matches have updated, overwrite stored matches
+  if (storedVersion !== defaultMatchesStr) {
+    console.log("getMatches: Codebase default matches updated. Resetting localStorage matches.");
+    localStorage.setItem(STORAGE_KEY, defaultMatchesStr);
+    localStorage.setItem(STORAGE_VERSION_KEY, defaultMatchesStr);
+    return defaultMatches;
+  }
+
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      console.log("getMatches: Returning stored matches:", parsed);
+      return parsed;
+    } catch (e) {
+      console.error("getMatches: Error parsing stored matches, falling back to defaults", e);
+    }
+  }
+
+  console.log("getMatches: No stored data, using default matches");
+  localStorage.setItem(STORAGE_KEY, defaultMatchesStr);
+  localStorage.setItem(STORAGE_VERSION_KEY, defaultMatchesStr);
   return defaultMatches;
 };
 
