@@ -23,33 +23,31 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-06-31T21:40:00+05:45",
-      iframeUrl:
-        "https://socolivea.cv/truc-tiep/l1-vs-e3-h3-i3-j3-k3-01-07-2026-2300/",
-      team1img: "/england.png",
-      team2img: "/congo.png",
-      team1name: "England",
-      team2name: "DR Congo",
+      matchDate: "2026-07-02T00:40:00+05:45",
+      iframeUrl: "https://socolivex.cv/truc-tiep/h1-vs-j2-03-07-2026-0200/",
+      team1img: "/spain.png",
+      team2img: "/austria.png",
+      team1name: "Spain",
+      team2name: "Austria",
     },
     {
       id: "2",
-      matchDate: "2026-06-01T01:40:00+05:45",
-      iframeUrl:
-        "https://socolivea.cv/truc-tiep/g1-vs-a3-e3-h3-i3-j3-02-07-2026-0300/",
-      team1img: "/belgium.png",
-      team2img: "/senegal.png",
-      team1name: "Belgium",
-      team2name: "Senegal",
+      matchDate: "2026-07-03T04:40:00+05:45",
+      iframeUrl: "https://socolivex.cv/truc-tiep/k2-vs-l2-03-07-2026-0600/",
+      team1img: "/portugal.png",
+      team2img: "/croatia.png",
+      team1name: "Portugal",
+      team2name: "Croatia",
     },
     {
       id: "3",
-      matchDate: "2026-07-01T01:40:00+05:45",
+      matchDate: "2026-07-03T08:40:00+05:45",
       iframeUrl:
-        "https://socolivea.cv/truc-tiep/usa-vs-bosnia-and-herzegovina-02-07-2026-0700/",
-      team1img: "/usa.png",
-      team2img: "/bosnia.png",
-      team1name: "USA",
-      team2name: "Bosnia and Herzegovina",
+        "https://socolivex.cv/truc-tiep/switzerland-vs-ecuador-sweden-g3-i3-j3-03-07-2026-1000/",
+      team1img: "/swiss.png",
+      team2img: "/algeria.png",
+      team1name: "Switzerland",
+      team2name: "Algeria",
     },
   ];
 
