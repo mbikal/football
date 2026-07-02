@@ -23,6 +23,7 @@ function News() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const categories = [
     { id: "all", name: "All News", icon: "📰" },
@@ -198,6 +199,7 @@ function News() {
     }
 
     setFilteredNews(filtered);
+    setVisibleCount(12);
   }, [news, searchTerm, selectedCategory]);
 
   const formatDate = (dateString: string) => {
@@ -429,13 +431,14 @@ function News() {
                 </p>
               </div>
             ) : (
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-                gap: '24px',
-                marginBottom: '48px'
-              }}>
-                {filteredNews.map((article, index) => {
+              <>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+                  gap: '24px',
+                  marginBottom: '48px'
+                }}>
+                  {filteredNews.slice(0, visibleCount).map((article, index) => {
                   // Insert ad banner after every 6 news articles
                   const shouldShowAd = index > 0 && (index + 1) % 6 === 0;
                   
@@ -475,8 +478,9 @@ function News() {
                             position: 'relative'
                           }}>
                             <img
-                               src={article.urlToImage}
+                              src={article.urlToImage}
                               alt={article.title}
+                              loading="lazy"
                               style={{
                                 width: '100%',
                                 height: '100%',
@@ -631,7 +635,45 @@ function News() {
                     </React.Fragment>
                   );
                 })}
-              </div>
+                </div>
+
+                {visibleCount < filteredNews.length && (
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginBottom: '48px'
+                  }}>
+                    <button
+                      onClick={() => setVisibleCount(prev => prev + 12)}
+                      style={{
+                        padding: '14px 32px',
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderRadius: '12px',
+                        color: 'white',
+                        fontSize: '15px',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                      }}
+                    >
+                      Load More Articles
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </>
         )}
