@@ -10,31 +10,33 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-02T00:40:00+05:45",
-      iframeUrl: "https://socolivex.cv/truc-tiep/h1-vs-j2-03-07-2026-0200/",
-      team1img: "/spain.png",
-      team2img: "/austria.png",
-      team1name: "Spain",
-      team2name: "Austria",
+      matchDate: "2026-07-03T23:40:00+05:45",
+      iframeUrl:
+        "https://socoliveh.cv/truc-tiep/australia-vs-egypt-04-07-2026-0100/",
+      team1img: "/australia.png",
+      team2img: "/epgyt.png",
+      team1name: "Australia",
+      team2name: "Egypt",
     },
     {
       id: "2",
-      matchDate: "2026-07-03T04:40:00+05:45",
-      iframeUrl: "https://socolivex.cv/truc-tiep/k2-vs-l2-03-07-2026-0600/",
-      team1img: "/portugal.png",
-      team2img: "/croatia.png",
-      team1name: "Portugal",
-      team2name: "Croatia",
+      matchDate: "2026-07-04T03:40:00+05:45",
+      iframeUrl:
+        "https://socoliveh.cv/truc-tiep/argentina-vs-cabo-verde-04-07-2026-0500/",
+      team1img: "/argentina.png",
+      team2img: "/cape.png",
+      team1name: "Argentina",
+      team2name: "Cape Verde",
     },
     {
       id: "3",
-      matchDate: "2026-07-03T08:40:00+05:45",
+      matchDate: "2026-07-04T07:40:00+05:45",
       iframeUrl:
-        "https://socolivex.cv/truc-tiep/switzerland-vs-ecuador-sweden-g3-i3-j3-03-07-2026-1000/",
-      team1img: "/swiss.png",
-      team2img: "/algeria.png",
-      team1name: "Switzerland",
-      team2name: "Algeria",
+        "https://socoliveh.cv/truc-tiep/k1-vs-d3-e3-i3-j3-l3-04-07-2026-0830/",
+      team1img: "/colombia.png",
+      team2img: "/ghana.png",
+      team1name: "Colombia",
+      team2name: "Ghana",
     },
   ];
 
