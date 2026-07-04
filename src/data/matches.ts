@@ -10,33 +10,23 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-03T23:40:00+05:45",
+      matchDate: "2026-07-04T22:40:00+05:45",
       iframeUrl:
-        "https://socoliveh.cv/truc-tiep/australia-vs-egypt-04-07-2026-0100/",
-      team1img: "/australia.png",
-      team2img: "/epgyt.png",
-      team1name: "Australia",
-      team2name: "Egypt",
+        "https://socoliveb.cv/truc-tiep/south-africa-canada-vs-netherlands-morocco-05-07-2026-0000/",
+      team1img: "/canada.png",
+      team2img: "/morocco.png",
+      team1name: "Canada",
+      team2name: "Morocco",
     },
     {
       id: "2",
-      matchDate: "2026-07-04T03:40:00+05:45",
+      matchDate: "2026-07-05T02:40:00+05:45",
       iframeUrl:
-        "https://socoliveh.cv/truc-tiep/argentina-vs-cabo-verde-04-07-2026-0500/",
-      team1img: "/argentina.png",
-      team2img: "/cape.png",
-      team1name: "Argentina",
-      team2name: "Cape Verde",
-    },
-    {
-      id: "3",
-      matchDate: "2026-07-04T07:40:00+05:45",
-      iframeUrl:
-        "https://socoliveh.cv/truc-tiep/k1-vs-d3-e3-i3-j3-l3-04-07-2026-0830/",
-      team1img: "/colombia.png",
-      team2img: "/ghana.png",
-      team1name: "Colombia",
-      team2name: "Ghana",
+        "https://socoliveb.cv/truc-tiep/germany-paraguay-vs-france-sweden-05-07-2026-0400/?blv=118206",
+      team1img: "/paraguay.png",
+      team2img: "/france.png",
+      team1name: "Paraguay",
+      team2name: "France",
     },
   ];
 
