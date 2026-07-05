@@ -10,23 +10,23 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-04T22:40:00+05:45",
+      matchDate: "2026-07-06T01:40:00+05:45",
       iframeUrl:
-        "https://socoliveb.cv/truc-tiep/south-africa-canada-vs-netherlands-morocco-05-07-2026-0000/",
-      team1img: "/canada.png",
-      team2img: "/morocco.png",
-      team1name: "Canada",
-      team2name: "Morocco",
+        "https://socoliveb.cv/truc-tiep/brazil-vs-cote-divoire-norway-06-07-2026-0300/",
+      team1img: "/brasil.png",
+      team2img: "/norway.png",
+      team1name: "Brazil",
+      team2name: "Norway",
     },
     {
       id: "2",
-      matchDate: "2026-07-05T02:40:00+05:45",
+      matchDate: "2026-07-06T05:40:00+05:45",
       iframeUrl:
-        "https://socoliveb.cv/truc-tiep/germany-paraguay-vs-france-sweden-05-07-2026-0400/?blv=118206",
-      team1img: "/paraguay.png",
-      team2img: "/france.png",
-      team1name: "Paraguay",
-      team2name: "France",
+        "https://socoliveb.cv/truc-tiep/winner-r32-match-7-vs-winner-r32-match-8-06-07-2026-0700/",
+      team1img: "/mexico.png",
+      team2img: "/england.png",
+      team1name: "Mexico",
+      team2name: "England",
     },
   ];
 
@@ -36,7 +36,9 @@ export const getMatches = (): Match[] => {
 
   // If codebase default matches have updated, overwrite stored matches
   if (storedVersion !== defaultMatchesStr) {
-    console.log("getMatches: Codebase default matches updated. Resetting localStorage matches.");
+    console.log(
+      "getMatches: Codebase default matches updated. Resetting localStorage matches.",
+    );
     localStorage.setItem(STORAGE_KEY, defaultMatchesStr);
     localStorage.setItem(STORAGE_VERSION_KEY, defaultMatchesStr);
     return defaultMatches;
@@ -49,7 +51,10 @@ export const getMatches = (): Match[] => {
       console.log("getMatches: Returning stored matches:", parsed);
       return parsed;
     } catch (e) {
-      console.error("getMatches: Error parsing stored matches, falling back to defaults", e);
+      console.error(
+        "getMatches: Error parsing stored matches, falling back to defaults",
+        e,
+      );
     }
   }
 
