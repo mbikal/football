@@ -10,7 +10,7 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-07T01:40:00+05:45",
+      matchDate: "2026-07-07T00:40:00+05:45",
       iframeUrl:
         "https://socolivek.cv/truc-tiep/winner-r32-match-11-vs-winner-r32-match-12-07-07-2026-0200/",
       team1img: "/portugal.png",
