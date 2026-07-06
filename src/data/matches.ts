@@ -10,23 +10,23 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-06T01:40:00+05:45",
+      matchDate: "2026-07-07T01:40:00+05:45",
       iframeUrl:
-        "https://socoliveb.cv/truc-tiep/brazil-vs-cote-divoire-norway-06-07-2026-0300/",
-      team1img: "/brasil.png",
-      team2img: "/norway.png",
-      team1name: "Brazil",
-      team2name: "Norway",
+        "https://socolivek.cv/truc-tiep/winner-r32-match-11-vs-winner-r32-match-12-07-07-2026-0200/",
+      team1img: "/portugal.png",
+      team2img: "/spain.png",
+      team1name: "Portugal",
+      team2name: "Spain",
     },
     {
       id: "2",
-      matchDate: "2026-07-06T05:40:00+05:45",
+      matchDate: "2026-07-07T05:40:00+05:45",
       iframeUrl:
-        "https://socoliveb.cv/truc-tiep/winner-r32-match-7-vs-winner-r32-match-8-06-07-2026-0700/",
-      team1img: "/mexico.png",
-      team2img: "/england.png",
-      team1name: "Mexico",
-      team2name: "England",
+        "https://socolivek.cv/truc-tiep/winner-r32-match-9-vs-winner-r32-match-10-07-07-2026-0700/",
+      team1img: "/usa.png",
+      team2img: "/belgium.png",
+      team1name: "USA",
+      team2name: "Belgium",
     },
   ];
 
