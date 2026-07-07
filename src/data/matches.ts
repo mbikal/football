@@ -20,7 +20,7 @@ export const getMatches = (): Match[] => {
     },
     {
       id: "2",
-      matchDate: "2026-08-07T01:40:00+05:45",
+      matchDate: "2026-07-08T01:40:00+05:45",
       iframeUrl:
         "https://socoliven.cv/truc-tiep/winner-r32-match-13-vs-winner-r32-match-15-08-07-2026-0300/",
       team1img: "/swiss.png",
