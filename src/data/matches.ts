@@ -10,13 +10,13 @@ export const getMatches = (): Match[] => {
   const defaultMatches: Match[] = [
     {
       id: "1",
-      matchDate: "2026-07-10T01:40:00+05:45",
+      matchDate: "2026-07-20T00:40:00+05:45",
       iframeUrl:
-        "https://socolivel.cv/truc-tiep/paraguay-france-vs-canada-morocco-10-07-2026-0300/",
-      team1img: "/france.png",
-      team2img: "/morocco.png",
-      team1name: "France",
-      team2name: "Morocco",
+        "https://socolivem.cv/truc-tiep/spain-vs-argentina-20-07-2026-0200/",
+      team1img: "/spain.png",
+      team2img: "/argentina.png",
+      team1name: "Spain",
+      team2name: "Argentina",
     },
   ];
 
